@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+app.use(express.json());
 
 const authMiddleware = (req, res, next) => {
     const token = req.cookies.token;
@@ -15,12 +16,7 @@ const authMiddleware = (req, res, next) => {
     }
     
 };
-const isAuthenticated = (req, res, next) => {
-    if (req.session.user) {
-        return next();
-    }
-    res.status(401).json({ message: 'Unauthorized' });
-};
+
 
 
 module.exports = authMiddleware;

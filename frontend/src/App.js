@@ -6,6 +6,7 @@ import RegisterPage from './pages/RegisterPage.js';
 import TicketsPage from './pages/TicketsPage';
 import UserPage from './pages/UserPage';
 
+
 function ProtectedRoute({ children }) {
     const isAuthenticated = !!localStorage.getItem('isAuthenticated'); // Adjust based on your auth logic
     return isAuthenticated ? children : <Navigate to="/login" />;
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/tickets" element={<TicketsPage />} />
                     <Route path="/profile" element={<UserPage />} />
                     <Route path="/login" element={<LoginPage />} />
+                    
                     <Route path="/user" element={
                         <ProtectedRoute>
                             <UserPage />

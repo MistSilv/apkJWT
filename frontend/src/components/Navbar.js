@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
         <nav style={styles.nav}>
-            <h1 style={styles.logo}>App Name</h1>
+            <h1 style={styles.logo}>Rezervex</h1>
             <ul style={styles.navList}>
                 <li style={styles.navItem}>
                     <Link to="/" style={styles.navLink}>Home</Link>

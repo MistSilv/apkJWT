@@ -12,6 +12,8 @@ const authRoutes = require('./routes/authRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+
+
 const app = express();
 connectDB();
 
@@ -19,7 +21,9 @@ app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(bodyParser.json());
 app.use(express.json());
 
-
+app.use('/api/auth', authRoutes);
+app.use('/api/tickets', ticketRoutes);
+app.use('/api/users', userRoutes);
 
 // const isAuthenticated = (req, res, next) => {
 //     if (req.session.user) {
@@ -40,9 +44,7 @@ app.use(session({
 }));
 
 
-app.use('/api/auth', authRoutes);
-app.use('/api/tickets', ticketRoutes);
-app.use('/api/users', userRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
