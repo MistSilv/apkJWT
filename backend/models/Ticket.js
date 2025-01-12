@@ -8,7 +8,7 @@ const TicketSchema = new mongoose.Schema({
     issuer: { type: String, required: true }, // Issuer of the ticket
     price: { type: Number, required: true }, // Price of the ticket
     reserved: { type: Boolean, default: false }, // Reserved status
-    reservedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null }, // User who reserved the ticket
+    reservedBy: { type: String, default: null }, // User who reserved the ticket
 });
 
 module.exports = mongoose.model('Ticket', TicketSchema);

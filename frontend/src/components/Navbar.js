@@ -10,14 +10,15 @@ function Navbar() {
                 <li style={styles.navItem}>
                     <Link to="/" style={styles.navLink}>Home</Link>
                 </li>
+                
                 <li style={styles.navItem}>
-                    <Link to="/register" style={styles.navLink}>Register</Link>
-                </li>
-                <li style={styles.navItem}>
-                    <Link to="/login" style={styles.navLink}>Login</Link>
+                    <Link to="/auth" style={styles.navLink}>Login</Link>
                 </li>
                 <li style={styles.navItem}>
                     <Link to="/tickets" style={styles.navLink}>Tickets</Link>
+                </li>
+                <li style={styles.navItem}>
+                    <Link to="/user" style={styles.navLink}>Profile</Link>
                 </li>
             </ul>
         </nav>

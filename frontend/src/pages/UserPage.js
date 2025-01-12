@@ -1,3 +1,4 @@
+
 // frontend/src/pages/UserPage.js
 import React from 'react';
 import axios from 'axios';
@@ -9,6 +10,7 @@ function UserPage() {
     const handleLogout = async () => {
         try {
             await axios.post('/api/users/logout', {}, { withCredentials: true });
+            localStorage.removeItem('userId');
             alert('Logged out successfully');
             navigate('/login'); // Redirect to login page
         } catch (error) {

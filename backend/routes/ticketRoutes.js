@@ -41,6 +41,7 @@ router.patch('/:id/reserve', async (req, res) => {
         }
         // Update the reserved field
         ticket.reserved = req.body.reserved;
+        ticket.reservedBy = req.body.reservedBy;
 
         await ticket.save();
         res.status(200).json(ticket);

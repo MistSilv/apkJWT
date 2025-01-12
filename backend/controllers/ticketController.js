@@ -12,12 +12,13 @@ exports.getTickets = async (req, res) => {
 exports.reserveTicket = async (req, res) => {
     const { id } = req.params;
     try {
+        console.log(req.user);
         const ticket = await Ticket.findById(id);
         if (!ticket) return res.status(404).json({ message: 'Ticket not found' });
         if (ticket.reserved) return res.status(400).json({ message: 'Ticket already reserved' });
 
         ticket.reserved = true;
-        ticket.reservedBy = req.user.id;
+        ticket.reservedBy = req.user.id; // Attach the logged-in user's ID
         await ticket.save();
         res.json(ticket);
     } catch (error) {

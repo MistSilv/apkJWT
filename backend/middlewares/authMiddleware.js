@@ -1,4 +1,6 @@
+/*
 const jwt = require('jsonwebtoken');
+
 app.use(express.json());
 
 const authMiddleware = (req, res, next) => {
@@ -20,3 +22,4 @@ const authMiddleware = (req, res, next) => {
 
 
 module.exports = authMiddleware;
+*/
